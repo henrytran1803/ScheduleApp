@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct EventEditor: View {
-    @Binding var event: Event
-    @State var isNew = false
+    @Binding var event: Event // sửa event
+    @State var isNew = false // new hay old
     
     @Environment(\.dismiss) private var dismiss
     @FocusState var focusedTask: EventTask?

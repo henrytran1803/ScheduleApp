@@ -9,9 +9,9 @@ import SwiftUI
 
 struct TaskRow: View {
     @Binding var task: EventTask
-    var focusedTask: FocusState<EventTask?>.Binding
+    var focusedTask: FocusState<EventTask?>.Binding // có thể thay đổi task theo dõi trạng thái của task
 
-    var body: some View {
+    var body: some View { // từng dòng task có check check hoàn thành và chưa hoàn thành
         HStack {
             Button {
                 task.isCompleted.toggle()

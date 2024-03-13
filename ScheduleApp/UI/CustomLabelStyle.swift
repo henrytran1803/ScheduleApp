@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomLabelStyle: LabelStyle {
+struct CustomLabelStyle: LabelStyle { // style lbel chỉnh sửa icon scale hinh anh
   @ScaledMetric private var iconWidth: Double = 40
   func makeBody(configuration: Configuration) -> some View {
     HStack(spacing: 0) {

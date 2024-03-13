@@ -175,6 +175,7 @@
 		D229F5BE2B9E95CC004F56A7 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D229F5D22B9E9716004F56A7 /* SymbolPicker.swift */,
 				D229F5BF2B9E95F4004F56A7 /* ColorOption.swift */,
 				D229F5C12B9E960D004F56A7 /* CustomLabelStyle.swift */,
 			);
@@ -184,14 +185,8 @@
 		D229F5C32B9E9636004F56A7 /* Event */ = {
 			isa = PBXGroup;
 			children = (
+				D229F5D72B9EA55F004F56A7 /* View */,
 				D229F5D62B9E9827004F56A7 /* Model */,
-				D229F5C82B9E9686004F56A7 /* EventEditor.swift */,
-				D229F5CA2B9E96BA004F56A7 /* EventList.swift */,
-				D229F5CC2B9E96CF004F56A7 /* EventRow.swift */,
-				D229F5CE2B9E96E5004F56A7 /* EventSymbols.swift */,
-				D229F5D02B9E96FE004F56A7 /* EventTask.swift */,
-				D229F5D22B9E9716004F56A7 /* SymbolPicker.swift */,
-				D229F5D42B9E972E004F56A7 /* TaskRow.swift */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -199,10 +194,23 @@
 		D229F5D62B9E9827004F56A7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D229F5CE2B9E96E5004F56A7 /* EventSymbols.swift */,
+				D229F5D02B9E96FE004F56A7 /* EventTask.swift */,
 				D229F5C42B9E9644004F56A7 /* Event.swift */,
 				D229F5C62B9E9663004F56A7 /* EventData.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D229F5D72B9EA55F004F56A7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D229F5D42B9E972E004F56A7 /* TaskRow.swift */,
+				D229F5C82B9E9686004F56A7 /* EventEditor.swift */,
+				D229F5CA2B9E96BA004F56A7 /* EventList.swift */,
+				D229F5CC2B9E96CF004F56A7 /* EventRow.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -80,7 +80,6 @@ class EventData: ObservableObject {
               ],
               date: Date.roundedHoursFromNow(60 * 60 * 24 * 19)),
     ]
-    /*#-code-walkthrough(4.events)*/
     
     func add(_ event: Event) {
         events.append(event)
@@ -126,51 +125,28 @@ class EventData: ObservableObject {
 
     func load() {
         do {
-            /*#-code-walkthrough(7.loadfileURL)*/
             let fileURL = try EventData.getEventsFileURL()
-            /*#-code-walkthrough(7.loadfileURL)*/
-            /*#-code-walkthrough(7.loadData)*/
             let data = try Data(contentsOf: fileURL)
-            /*#-code-walkthrough(7.loadData)*/
-            /*#-code-walkthrough(7.loadDataDecode)*/
             events = try JSONDecoder().decode([Event].self, from: data)
-            /*#-code-walkthrough(7.loadDataDecode)*/
             print("Events loaded: \(events.count)")
         } catch {
-            /*#-code-walkthrough(7.loadFail)*/
             print("Failed to load from file. Backup data used")
-            /*#-code-walkthrough(7.loadFail)*/
         }
     }
     
-    //#-learning-task(saveFunc)
     func save() {
         do {
             let fileURL = try EventData.getEventsFileURL()
-            /*#-code-walkthrough(8.saveEncode)*/
             let data = try JSONEncoder().encode(events)
-            /*#-code-walkthrough(8.saveEncode)*/
-            /*#-code-walkthrough(8.saveWrite)*/
             try data.write(to: fileURL, options: [.atomic, .completeFileProtection])
-            /*#-code-walkthrough(8.saveWrite)*/
             print("Events saved")
         } catch {
-            /*#-code-walkthrough(8.saveFail)*/
             print("Unable to save")
-            /*#-code-walkthrough(8.saveFail)*/
         }
     }
 }
 
-enum Period: String, CaseIterable, Identifiable {
-    case nextSevenDays = "Next 7 Days"
-    case nextThirtyDays = "Next 30 Days"
-    case future = "Future"
-    case past = "Past"
-    
-    var id: String { self.rawValue }
-    var name: String { self.rawValue }
-}
+
 
 extension Date {
     static func from(month: Int, day: Int, year: Int) -> Date {

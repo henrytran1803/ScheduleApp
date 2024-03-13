@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ColorOptions: Codable {
+struct ColorOptions: Codable { // luựa chọn màu
     static var all: [Color] = [
         .primary,
         .gray,
@@ -21,9 +21,9 @@ struct ColorOptions: Codable {
         .purple,
     ]
     
-    static var `default` : Color = Color.primary
+    static var `default` : Color = Color.primary // màu mặc định
     
-    static func random() -> Color {
+    static func random() -> Color { // ramdom một màu trong all
         if let element = ColorOptions.all.randomElement() {
             return element
         } else {
@@ -33,7 +33,7 @@ struct ColorOptions: Codable {
     }
 }
 
-struct RGBAColor: Codable, Hashable {
+struct RGBAColor: Codable, Hashable { // màu rgb
     var r: CGFloat
     var g: CGFloat
     var b: CGFloat
